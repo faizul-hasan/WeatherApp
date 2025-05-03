@@ -1,2 +1,2 @@
 # WeatherApp
-This is my internship project
+This is my internship project in (React Native)
