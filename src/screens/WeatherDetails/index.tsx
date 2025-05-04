@@ -66,11 +66,13 @@ const WeatherDetailsScreen = ({route}: any) => {
             uri: `https:${weather?.current?.condition?.icon}`,
           }}
         />
-        <Text style={WeatherDetailsStyles.conditionText}>
-          {weather?.current?.condition?.text}
-        </Text>
       </View>
-      <Text>Wind Speed: {weather?.current?.wind_mph} m/s</Text>
+      <Text style={WeatherDetailsStyles.conditionText}>
+        {weather?.current?.condition?.text}
+      </Text>
+      <Text style={{fontSize: 22, color: 'blue', marginBottom: 15}}>
+        Wind Speed: {weather?.current?.wind_mph} m/s
+      </Text>
       <Button title="Back" onPress={() => goBack()} />
     </View>
   );

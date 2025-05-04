@@ -1,20 +1,35 @@
 import {navigate} from 'navigation/rootNavigator';
 import React, {useState} from 'react';
-import {View, TextInput, Button, StyleSheet} from 'react-native';
+import {View, TextInput, Button, Image} from 'react-native';
+import {HomeStyles} from './styles';
+import screens from 'constant';
 
 const HomeScreen = () => {
   const [city, setCity] = useState('');
 
   const handleSearch = () => {
     if (city.trim()) {
-      navigate('WeatherDetails', {city});
+      navigate(screens.WeatherDetails, {city});
     }
   };
 
   return (
-    <View style={styles.container}>
+    <View style={HomeStyles.container}>
+      <View
+        style={{
+          marginBottom: 150,
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+        <Image
+          style={HomeStyles.icon}
+          source={{
+            uri: `https://cdn.jim-nielsen.com/ios/1024/weather-2019-02-07.png?rf=1024`,
+          }}
+        />
+      </View>
       <TextInput
-        style={styles.input}
+        style={HomeStyles.input}
         placeholder="Enter city name"
         value={city}
         onChangeText={setCity}
@@ -23,20 +38,5 @@ const HomeScreen = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    padding: 20,
-  },
-  input: {
-    height: 40,
-    borderColor: '#ccc',
-    borderWidth: 1,
-    marginBottom: 12,
-    paddingHorizontal: 10,
-  },
-});
 
 export default HomeScreen;
