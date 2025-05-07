@@ -17,7 +17,7 @@ const HomeScreen = () => {
     <View style={HomeStyles.container}>
       <View
         style={{
-          marginBottom: 150,
+          marginBottom: 30,
           justifyContent: 'center',
           alignItems: 'center',
         }}>
